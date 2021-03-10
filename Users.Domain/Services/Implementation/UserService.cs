@@ -14,13 +14,13 @@ namespace Users.Domain.Services.Implementation
         }
         public Person AddUser(Person person)
         {
-            //var newUser = new Person
-            //{
-            //    FirstName = person.FirstName,
-            //    LastName = person.LastName,
-            //    DateOfBirth = person.DateOfBirth,
-            //    AddressNavigation = person.AddressNavigation
-            //};
+            var newUser = new Person
+            {
+                FirstName = person.FirstName,
+                LastName = person.LastName,
+                DateOfBirth = person.DateOfBirth,
+                AddressNavigation = person.AddressNavigation
+            };
             var user = unitOfWork.GetRepository().Add(person);
             return user;
         }
